@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300&display=swap');
+
+*{
+  font-family: 'Spartan', sans-serif;
+}
+
+nav{
+  background-color: white;
+}
+
+.nav-link{
+  color: black;
+}
+
+.form-control{
+    width: 227px!important;
+    height: 28px;
+    margin-left: 0;
+    border-radius: 0!important;
+    border-color: #fff!important;
+    border-bottom: 1px solid #000!important;
+    font-size: 14px;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    text-align: left;
+    line-height: 1.21428571em;
+    font-family: Gotham,Helvetica Neue,Arial,Helvetica,sans-serif;
+    padding: 0.67857143em 1em;
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+}
+
+.up-nav{
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.up-nav p{
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.search{
+  color: black;
+}
+
+form{
+  margin-left: 50px;
+}
+
+.icons{
+  display: flex;
+  padding-left: 180px;
+}
+
+.icons i {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+i{
+  font-size: 20px;
+}
+
+#btn-cart{
+  border: none;
+  background: white;
+}
+
+@media (max-width: 600px)
+{
+  .this
+   {
+    display: none;
+   }
+
+   .icons{
+    display: flex;
+    padding-left: 0px;
+  }
+
+  .navbar-brand{
+    margin-left: 60px;
+  }
+
+}
