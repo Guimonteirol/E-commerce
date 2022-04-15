@@ -1,0 +1,35 @@
+<div class="container" style="border: 2px solid black;">
+  <div class="modal-dialog">
+    <table class="table-responsive" >
+      <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th colspan="2">Quantidade</th>
+        <th>Total</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of cart$ | async " >
+        <td>foto aqui</td>
+        <td>{{cart.title}}</td>
+        <td>R$ {{cart.price}}</td>
+        <td> quant aqui</td>
+        <td>
+          <button type="button" class="btn">aumetnar</button>
+          <button type="button"  class="btn" >diminuir</button>
+        </td>
+        <td>total de peças</td>
+        <td>EXCLUIR</td>
+      </tr>
+      <tr>
+        <td colspan="5"></td>
+        <td ><strong class="btn btn-sm btn-outline-secondary"> O </strong></td>
+        <td><button class="btn btn-sm btn-danger">Limpar Carrinho</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+</div>

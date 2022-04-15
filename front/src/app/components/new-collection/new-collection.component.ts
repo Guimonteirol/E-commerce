@@ -1,4 +1,6 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { StoreServicesService } from 'src/app/services/store-services.service';
 
 @Component({
   selector: 'app-new-collection',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCollectionComponent implements OnInit {
 
-  constructor() { }
+  store$!: Observable<any>;
+
+  constructor(private storeService: StoreServicesService) { }
 
   ngOnInit(): void {
+    this.getStore()
   }
 
+  getStore(){
+    this.store$ = this.storeService.showStore()
+  }
 }

@@ -1,6 +1,6 @@
 const { model, Schema } = require("mongoose");
 
-const Cart = model("CartEcommerce", new Schema({
+const Store = model("StoreEcommerce", new Schema({
     title:{
         type: String,
         required: true
@@ -9,14 +9,14 @@ const Cart = model("CartEcommerce", new Schema({
         type: Number,
         required: true
     },
-    size:{
-        type: String,
-        required: true
-    },
+    // size:{
+    //     type: String,
+    //     required: true
+    // },
     img:{
         type: String,
         required: true
     }
 }));
 
-module.exports = Cart;
+module.exports = Store;

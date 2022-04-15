@@ -1,32 +1,22 @@
-const {db} = require('./../db');
-const Cart = require('./../models/cartModel')
+const { findOneAndReplace } = require('../models/cartModel');
+const Cart = require('../models/cartModel')
+const Store = require('../models/storeModel');
+const { add } = require('./storeController');
+class CartController{
 
+    static async addCart(req, res){
+        const {_id} = req.body
+        const addCart = await Store.find({_id: _id}).lean();
+        console.log(addCart)
+        const newCart = new Cart({title: addCart[0].title, price: addCart[0].price, size: addCart[0].size, img: addCart[0].img});
+        await newCart.save();
+        res.status(201).json(newCart)
+    }
 
-class CartController {
-
-    static async add(req, res){
-        const {title, price, size} = req.body;
-        const newProduct = new Cart( {title, price, size} );
-        await newProduct.save();
-        res.status(201).json(newProduct)
-}
-
-    static async show(req, res){
+    static async showCart(req, res){
         let query = {};
         const show = await Cart.find(query).lean();
         res.status(201).json(show);
-    }
-
-    static async edit(req, res){
-        const {_id, title, price, size} = req.body
-        const editPorudct =  await Cart.findByIdAndUpdate(_id,{ title, price, size });
-        res.status(201).json(editPorudct)
-    }
-
-    static async delete(req, res){
-        const {_id} = req.body;
-        await Cart.findByIdAndDelete(_id)
-        res.status(201).json("Deletado")
     }
 
 }
