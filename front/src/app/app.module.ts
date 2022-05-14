@@ -9,6 +9,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { CallToActionComponent } from './components/call-to-action/call-to-action.component';
 import { NewCollectionComponent } from './components/new-collection/new-collection.component';
 import { CartComponent } from './components/cart/cart.component';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { CartComponent } from './components/cart/cart.component';
     HeaderComponent,
     CallToActionComponent,
     NewCollectionComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

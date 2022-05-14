@@ -49,7 +49,9 @@
     </div>
     <div class="col-sm icons">
       <i class="bi bi-person"></i>
-     <button id="btn-cart" matTooltip="Meu carrinho"><i class="bi bi-cart3"></i></button>
+     <button type="button" id="btn-cart" matTooltip="Meu carrinho" (click)="openCart()" >
+       <i class="bi bi-cart3"></i>
+      </button>
     </div>
 </div>
 </nav>

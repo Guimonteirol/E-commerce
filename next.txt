@@ -1,5 +1,6 @@
 todo:
 - Fazer serviço para listar produtos dinamicamente;
+(não estou conseguindo fazer o back receber meu parãmetro do front)
 - Ver como enviar informações pelo forms para o carrino;
 - Estilizar Carrinho;
 - Chamar carrinho com o clik;

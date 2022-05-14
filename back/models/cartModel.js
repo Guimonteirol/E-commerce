@@ -16,6 +16,14 @@ const Cart = model("CartEcommerce", new Schema({
     img:{
         type: String,
         required: true
+    }, 
+    quant:{
+        type: Number,
+        required: true
+    },
+    total:{
+        type: Number,
+        required: true
     }
 }));
 

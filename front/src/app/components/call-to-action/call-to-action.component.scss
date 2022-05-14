@@ -4,8 +4,7 @@
 }
 .carousel img{
   height: 100%;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
 .wrapper {
@@ -42,6 +41,7 @@
 .wrapper button[class^="slide"]::after {
   transition: all 0.35s;
 }
+
 .wrapper button[class^="slide"]:hover::after {
   left: 0;
   right: 0;
@@ -49,6 +49,7 @@
   bottom: 0;
   transition: all 0.35s;
 }
+
 button.slide_from_left::after {
   top: 0;
   bottom: 0;
@@ -56,11 +57,14 @@ button.slide_from_left::after {
   right: 100%;
 }
 
-// .comprar-titulo{
-//   text-align: center;
-//   margin-top: 40px;
-// }
-// .comprar-img img{
-//   width: 160px;
-//   height: 160px;
-// }
+
+.img-cat {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  filter: brightness(.5)
+}
+
+.img-cat:hover {
+  filter: brightness(1)
+}

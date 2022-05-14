@@ -1,24 +1,26 @@
 <div>
-  <div class="title">
-    <p>NOVA COLEÇÃO</p>
+  <div class="container mb-3 text-center mt-5">
+    <h2 class="fs-2 fw-light">NOVA COLEÇÃO</h2>
   </div>
   <div>
     <div class="container cards d-flex flex-wrap justify-content-center">
-      <div class="card" *ngFor="let product of store$ | async">
+      <div class="card" *ngFor="let product of store$ | async; index as i">
         <img src="{{product.img}}" alt="">
         <div class="dados">
-          <form action="/addCart" method="post">
-            <p>{{product.title}}</p>
-            <p>R$ {{product.price}}</p>
+          <form method="POST">
+            <p name ="title">{{product.title}}</p>
+        <input [(ngModel)]="product._id" type="hidden" name="_id">
+        <input [(ngModel)]="product.quant" type="hidden" name="quant">
+            <p name ="price">R$ {{product.price}}</p>
             <div class="input-group mb-3">
-              <select class="form-select" id="inputGroupSelect01">
+              <select [(ngModel)]="product.size" name="size" class="form-select" id="inputGroupSelect01" required>
                 <option selected>ELECIONE UM TAMANHO</option>
-                <option value="P">P</option>
-                <option value="M">M</option>
-                <option value="G">G</option>
-                <option value="GG">GG</option>
+                <option name="size" value="P">P</option>
+                <option name="size" value="M">M</option>
+                <option name="size" value="G">G</option>
+                <option name="size" value="GG">GG</option>
               </select>
-              <button type="submit">ADD</button>
+              <button type="submit" (click)="addProduct(product._id, product.size)">ADD</button>
             </div>
 
         </form>
@@ -26,5 +28,5 @@
 
     </div>
   </div>
-
+</div>
 </div>
