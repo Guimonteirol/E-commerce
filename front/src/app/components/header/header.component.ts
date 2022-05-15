@@ -10,10 +10,19 @@ import { CartServicesService } from 'src/app/services/cart-services.service';
 })
 export class HeaderComponent implements OnInit {
 
+  public totalItems: number = 0;
 
-  constructor(public cartModal: MatDialog) {}
+  constructor(public cartModal: MatDialog,
+    private cartService: CartServicesService,
+    ) {
+      this.cartService.showCart().subscribe(res => {
+        this.totalItems = res.length
+        })
+    }
+
 
   ngOnInit(): void {
+
   }
 
   openCart(){

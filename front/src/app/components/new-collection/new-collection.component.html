@@ -1,6 +1,6 @@
 <div>
   <div class="container mb-3 text-center mt-5">
-    <h2 class="fs-2 fw-light">NOVA COLEÇÃO</h2>
+    <h2 id="nova" class="fs-2 fw-light">NOVA COLEÇÃO</h2>
   </div>
   <div>
     <div class="container cards d-flex flex-wrap justify-content-center">
@@ -8,19 +8,19 @@
         <img src="{{product.img}}" alt="">
         <div class="dados">
           <form method="POST">
-            <p name ="title">{{product.title}}</p>
+            <p name ="title" class="fs-6 fw-light mt-2 mx-2">{{product.title}}</p>
         <input [(ngModel)]="product._id" type="hidden" name="_id">
         <input [(ngModel)]="product.quant" type="hidden" name="quant">
-            <p name ="price">R$ {{product.price}}</p>
+           <strong><p name ="price" class="mx-2">R$ {{product.price.toFixed(2)}}</p></strong>
             <div class="input-group mb-3">
               <select [(ngModel)]="product.size" name="size" class="form-select" id="inputGroupSelect01" required>
-                <option selected>ELECIONE UM TAMANHO</option>
+                <option selected>SELECIONE UM TAMANHO</option>
                 <option name="size" value="P">P</option>
                 <option name="size" value="M">M</option>
                 <option name="size" value="G">G</option>
                 <option name="size" value="GG">GG</option>
               </select>
-              <button type="submit" (click)="addProduct(product._id, product.size)">ADD</button>
+              <button type="submit" (click)="addProduct(product._id, product.size)">ADD </button>
             </div>
 
         </form>
@@ -29,4 +29,8 @@
     </div>
   </div>
 </div>
+
+<div class="wrapper">
+  <button class="slide_from_left">VER TODOS</button>
+  </div>
 </div>

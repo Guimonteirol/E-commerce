@@ -1,65 +1,76 @@
-<div class="container" >
+<div class="container">
   <div class="d-flex justify-content-between" *ngIf="quantCart.length !== 0">
-  <h1 class="text-success" mat-dialog-title>Meu Carrinho</h1>
-  <span> <strong class="btn btn-sm btn-outline-secondary">Total: {{totalFinal.toFixed(2)}} </strong></span>
+    <h1 class="fs-2 fw-light" mat-dialog-title>Meu Carrinho</h1>
+    <span>
+      <strong class="btn btn-sm btn-outline-secondary"
+        >Total: {{ totalFinal.toFixed(2) }}
+      </strong></span
+    >
   </div>
-  <hr>
+  <hr />
   <div mat-dialog-content>
     <ng-container *ngIf="quantCart.length !== 0">
-      <form  method="post">
-    <table class="table-responsive" >
-      <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Nome</th>
-        <th>Tamanho</th>
-        <th>Preço</th>
-        <th colspan="2">Quantidade</th>
-        <th>Total</th>
-        <th>Remover</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cart of quantCart " >
-        <!-- <input [(ngModel)]="cart._id" type="hidden" name="_id"> -->
-        <td><img src="{{cart.img}}" alt=""></td>
-        <td>{{cart.title}}</td>
-        <td>{{cart.size}}</td>
-        <td>R$ {{cart.price}}</td>
-        <td> {{cart.quant}}</td>
-        <td>
-          <button type="button" (click)="btnplus(cart._id)" class="btn"><i class="bi bi-plus-lg"></i></button>
-          <button type="button" (click)="btnmminus(cart._id)" class="btn" ><i class="bi bi-dash-lg"></i></button>
-        </td>
-        <td>{{cart.total.toFixed(2)}}</td>
-        <td><button type="submit" class="btn btn-sm btn-danger" (click)="deleteProduct(cart._id, cart.size)">Excluir</button></td>
-      </tr>
-      <!-- <tr> -->
-        <!-- <td colspan="7"></td> -->
-        <!-- <td ><strong class="btn btn-sm btn-outline-secondary">Total: {{totalFinal.toFixed(2)}} </strong></td> -->
-        <!-- <td><button class="btn btn-sm btn-danger">Limpar Carrinho</button></td> -->
-      <!-- </tr> -->
-    </tbody>
+      <form method="post">
+        <table class="table-responsive">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Nome</th>
+              <th>Tamanho</th>
+              <th>Preço</th>
+              <th colspan="2">Quantidade</th>
+              <th>Total</th>
+              <th>Remover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cart of quantCart">
+              <td><img src="{{ cart.img }}" alt="" /></td>
+              <td>{{ cart.title }}</td>
+              <td>{{ cart.size }}</td>
+              <td>R$ {{ cart.price }}</td>
+              <td>{{ cart.quant }}</td>
+              <td>
+                <button type="button" (click)="btnplus(cart._id)" class="btn">
+                  <i class="bi bi-plus-square-fill"></i>
+                </button>
+                <button type="button" (click)="btnmminus(cart._id)" class="btn">
+                  <i class="bi bi-dash-square-fill"></i>
+                </button>
+              </td>
+              <td>{{ cart.total.toFixed(2) }}</td>
+              <td>
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-danger"
+                  (click)="deleteProduct(cart._id, cart.size)"
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </ng-container>
 
-    </table>
-  </form>
-</ng-container>
+    <!-- When the cart is empty -->
+    <ng-container *ngIf="quantCart.length === 0">
+      <div class="emptyCart d-flex flex-column align-items-center">
+        <strong
+          ><h1 class="fs-2 fw-light" mat-dialog-title>Meu Carrinho</h1></strong
+        >
+        <i class="bi bi-cart-x-fill fs-2 fw-light"></i>
+        <br />
+        <h3>Seu Carrinho está vazio!</h3>
+        <a class="btn btn-sm btn-danger" href="/">Voltar para Loja</a>
+      </div>
+    </ng-container>
 
- <!-- When the cart is empty -->
- <ng-container *ngIf="quantCart.length === 0" >
-  <div class="emptyCart d-flex flex-column align-items-center">
-    <!-- <img width="{{ quantCart }}" class="imgEmptyCart"  alt=""> -->
-    <h3>Seu Carrinho está vazio!</h3>
-    <a class="btn btn-sm btn-success" href="/">Voltar para Loja</a>
+    <div mat-dialog-actions *ngIf="quantCart.length !== 0">
+      <button class="btn btn-sm btn-secondary" mat-button mat-dialog-close>
+        Fechar
+      </button>
+    </div>
   </div>
-</ng-container>
-
-<div mat-dialog-actions *ngIf="quantCart.length !== 0">
-  <button class="btn btn-sm btn-secondary" mat-button mat-dialog-close>Fechar</button>
 </div>
-
-</div>
-</div>
-
-
-

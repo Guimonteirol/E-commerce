@@ -11,6 +11,8 @@ import { NewCollectionComponent } from './components/new-collection/new-collecti
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FooterComponent } from './components/footer/footer.component';
+import { TopComponent } from './components/top/top.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
     CallToActionComponent,
     NewCollectionComponent,
     CartComponent,
+    FooterComponent,
+    TopComponent,
   ],
   imports: [
     BrowserModule,

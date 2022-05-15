@@ -29,39 +29,18 @@ export class NewCollectionComponent implements OnInit {
    this.store$.subscribe((e)=>{
      this.vetor = e
      this.vetor.forEach((e:any) => {
-       console.log(e._id)
      });
     })
 
   }
 
-  // addProduct(){
-  //   // const products: Cart = this.create.value
-  //   const {_id, size} = this.create.value;
-  //   console.log(this.create.value)
-  //   console.log(_id)
-  //   const products: Cart = {_id, size}
-  //   console.log(products)
-  //   this.cartService.addCart(products)
-  //   .subscribe({
-  //     next:(i: any) =>{
-  //     // this.cart = i.products
-  //     // console.log(i.products)
-  //     },
-  //     complete:()=>{}
-  //   })
-  // }
-
   addProduct(_id:string, size:string){
-    // const products: Cart = this.create.value
     console.log(_id)
     const products: Cart = {_id, size}
     console.log(products)
     this.cartService.addCart(products)
     .subscribe({
       next:(i: any) =>{
-      // this.cart = i.products
-      // console.log(i.products)
       },
       complete:()=>{}
     })

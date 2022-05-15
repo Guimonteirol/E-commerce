@@ -18,6 +18,7 @@
 
 .wrapper button {
   font-size: 1.5em;
+  height: 40px;
   background: black;
   color: #fff;
   border: 1px solid black;
@@ -67,4 +68,32 @@ button.slide_from_left::after {
 
 .img-cat:hover {
   filter: brightness(1)
+}
+
+.container{
+  margin-top: 80px;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+}
+
+a:hover {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .slide_from_left{
+    margin-top: 60px;
+  }
+
+  .wrapper button {
+    height: 40px;
+    width: 200px;
+  }
+
+  .container{
+    margin-top: 0px;
+  }
 }

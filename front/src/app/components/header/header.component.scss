@@ -51,12 +51,12 @@ form{
 
 .icons{
   display: flex;
-  padding-left: 00px;
+  margin-left: 90px;
 }
 
 .icons i {
   font-size: 25px;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 i{
@@ -68,20 +68,29 @@ i{
   background: white;
 }
 
-@media (max-width: 600px)
+.badge {
+  font-size: 8px;
+}
+
+@media (max-width: 900px)
 {
   .this
    {
     display: none;
    }
 
-   .icons{
-    display: flex;
-    padding-left: 0px;
+  .icons{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+  }
+  .navbar-brand{
+    margin-right: 40px;
   }
 
-  .navbar-brand{
-    margin-left: 60px;
+  .up-nav p{
+    font-size: 12px;
+    padding: 1px;
   }
 
 }
