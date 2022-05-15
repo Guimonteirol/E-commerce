@@ -16,6 +16,11 @@
 ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
+<br>
+
+> ## Demonstração 
+> <img src= "https://github.com/Guimonteirol/Ecommerce/blob/master/front/src/assets/gif/ecommerce_video.gif">
+
 <br/>
 
 > ## Como iniciar esse projeto
